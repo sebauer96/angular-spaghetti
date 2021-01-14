@@ -1,0 +1,7 @@
+<div *ngIf="listEmployee" class="container">
+  <div *ngFor="let e of listEmployee | async" class="center">
+    <p>Cantidad de {{e.name}}: {{e.count}} </p>
+    <button mat-button color="warn" (click)="deleteEmployee(e)">Remover</button>
+  </div>
+  
+</div>

@@ -1,0 +1,10 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="space-between">
+  
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Ejemplo: Sebastian Bauer" formControlName="name" required>
+    <mat-error *ngIf="employeeForm.controls.name.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="employeeForm.controls.name.invalid">Agregar</button>
+</form>
